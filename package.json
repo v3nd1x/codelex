@@ -1,0 +1,25 @@
+{
+  "name": "javascript-exercises",
+  "version": "1.0.0",
+  "author": "codelex",
+  "license": "ISC",
+  "scripts": {
+    "test:fuel": "jest exercises/Fuel",
+    "Test": "jest",
+    "test": "jest",
+    "test:easy": "jest exercises/easy",
+    "prettier": "prettier --write exercises/**/*.js",
+    "prettier:check": "prettier --check exercises/**/*.js"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.1",
+    "inquirer": "^6.5.0",
+    "jest": "^24.8.0",
+    "prettier": "1.18.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  }
+}

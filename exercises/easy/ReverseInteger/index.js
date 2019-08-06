@@ -13,8 +13,12 @@
  */
 
 function reverse(int) {
-    const arr = int.toString().split('').reverse().join('');
-    return parseInt(arr) * Math.sign(int);
+  const arr = int
+    .toString()
+    .split("")
+    .reverse()
+    .join("");
+  return parseInt(arr) * Math.sign(int);
 }
 
 module.exports = reverse;

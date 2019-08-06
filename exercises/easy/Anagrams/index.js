@@ -13,15 +13,25 @@
  */
 
 function anagrams(stringA, stringB) {
-    var SortedStringA = stringA.split("").sort().join("").toUpperCase().replace(/!/g,""); 
-        SortedStringB = stringB.split("").sort().join("").toUpperCase().replace(/!/g,""); 
-        console.log(SortedStringA,SortedStringB)
-        console.log('-------------')
-        if (SortedStringA == SortedStringB){
-            return true;
-        }   else {
-            return false; 
-        }
+  var SortedStringA = stringA
+    .split("")
+    .sort()
+    .join("")
+    .toUpperCase()
+    .replace(/!/g, "");
+  SortedStringB = stringB
+    .split("")
+    .sort()
+    .join("")
+    .toUpperCase()
+    .replace(/!/g, "");
+  console.log(SortedStringA, SortedStringB);
+  console.log("-------------");
+  if (SortedStringA == SortedStringB) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = anagrams;

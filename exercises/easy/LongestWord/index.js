@@ -13,10 +13,9 @@
  */
 
 function longestWord(sen) {
-    
   var arr = sen.match(/[a-z0-9]+/gi);
 
-  var newArr = arr.sort(function (a, b) {
+  var newArr = arr.sort(function(a, b) {
     if (a.length < b.length) {
       return 1;
     } else if (a.length > b.length) {
@@ -27,6 +26,6 @@ function longestWord(sen) {
   });
 
   return newArr[0];
-};
+}
 
 module.exports = longestWord;

@@ -8,35 +8,39 @@
  */
 
 class Clock {
-    constructor(hours = 0, minutes = 0) {
-      hours += Math.floor(minutes / 60);
-      while (hours < 0) {
-        hours += 24;
-      }
-      hours = hours % 24;
-      while (minutes < 0) {
-        minutes += 60;
-      }
-      minutes = minutes % 60;
-      this.hours = hours;
-      this.minutes = minutes;
+  constructor(hours = 0, minutes = 0) {
+    hours += Math.floor(minutes / 60);
+    while (hours < 0) {
+      hours += 24;
     }
-  
-    toString() {
-      return `${this.hours.toString().padStart(2, '0')}:${this.minutes.toString().padStart(2, '0')}`;
+    hours = hours % 24;
+    while (minutes < 0) {
+      minutes += 60;
     }
-  
-    plus(minutes) {
-      return new Clock(this.hours, this.minutes + minutes);
-    }
-  
-    minus(minutes) {
-      return new Clock(this.hours, this.minutes - minutes);
-    }
-  
-    equals(otherClock) {
-      return otherClock.hours === this.hours && otherClock.minutes === this.minutes;
-    }
+    minutes = minutes % 60;
+    this.hours = hours;
+    this.minutes = minutes;
   }
-  
-  module.exports = Clock;
+
+  toString() {
+    return `${this.hours
+      .toString()
+      .padStart(2, "0")}:${this.minutes.toString().padStart(2, "0")}`;
+  }
+
+  plus(minutes) {
+    return new Clock(this.hours, this.minutes + minutes);
+  }
+
+  minus(minutes) {
+    return new Clock(this.hours, this.minutes - minutes);
+  }
+
+  equals(otherClock) {
+    return (
+      otherClock.hours === this.hours && otherClock.minutes === this.minutes
+    );
+  }
+}
+
+module.exports = Clock;

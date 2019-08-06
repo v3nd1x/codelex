@@ -39,12 +39,11 @@ async function returnVideo() {
     {
       name: "Rating",
       type: "input",
-      message: "Please, leave a rating!",
+      message: "Please, leave a rating!"
     }
   ]);
 
   store.returnMovie(movie);
-
 }
 async function fillVideoStore() {
   let addMore = true;
@@ -55,7 +54,7 @@ async function fillVideoStore() {
       { type: "confirm", name: "more", message: "Would you like to add more?" }
     ]);
     addMore = more;
-    store.addMovie(movieName, movieRating); 
+    store.addMovie(movieName, movieRating);
     console.log(`Thanks, here's a list of movies: ${store.printContent}`);
   }
 }

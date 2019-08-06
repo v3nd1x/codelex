@@ -5,7 +5,9 @@ class Video {
     this.user = null;
   }
   get print() {
-    return this.isRented ? `[${this.name}]` : this.name + " | " + "Movie rating:" + " " + this.rating 
+    return this.isRented
+      ? `[${this.name}]`
+      : this.name + " | " + "Movie rating:" + " " + this.rating;
   }
   rent(user) {
     this.user = user;
@@ -24,15 +26,14 @@ class VideoStore {
   }
   addMovie(name, rating) {
     this.movies.push(new Video(name, rating));
-  } 
+  }
   get printContent() {
     return this.movies.map(m => m.print).join(",");
   }
   get asChoices() {
-    return this.movies 
-      .filter(movie => movie.isRented == false) 
-      .map(movie => ({ name: movie.print, value: movie}));
-     
+    return this.movies
+      .filter(movie => movie.isRented == false)
+      .map(movie => ({ name: movie.print, value: movie }));
   }
   rentMovies(movies, user) {
     for (const movie of movies) {
